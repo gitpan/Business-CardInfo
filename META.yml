@@ -1,0 +1,19 @@
+---
+abstract: 'Get/Validate data from credit & debit cards'
+author:
+  - 'purge: Simon Elliott <cpan@browsing.co.uk>'
+distribution_type: module
+generated_by: 'Module::Install version 0.75'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: Business-CardInfo
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Moose: 0.51
+  Test::More: 0
+version: 0.01
