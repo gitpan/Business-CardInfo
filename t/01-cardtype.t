@@ -11,7 +11,11 @@ $bc->number('4917 3000 0000 0008');
 is($bc->type,'Visa Electron');
 $bc->number('6334 9000 0000 0005');
 is($bc->type,'Solo');
+
 $bc->number('5641 8200 0000 0005');
+is($bc->type,'Maestro');
+
+$bc->number('5868 2416 0825 5333 38');
 is($bc->type,'Maestro');
 $bc->number('3742 000000 00004');
 is($bc->type,'AMEX');

@@ -2,7 +2,7 @@ package Business::CardInfo;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 subtype 'CardNumber'
   => as 'Int'
@@ -41,7 +41,7 @@ has 'type' => (
 sub _build_type {
   my $self = shift;
   my $number = $self->number;
-  my @grp = (substr($number,0,1), substr($number,0,4),substr($number,0,6));
+  #my @grp = (substr($number,0,1), substr($number,0,4),substr($number,0,6));
   return "Visa Electron" if $self->_search([qw/417500 4917 4913 4508 4844/]);
   return "Visa" if $self->_search([qw/4/]);
   return "MasterCard" if $self->_search([51 .. 55]);
@@ -50,7 +50,7 @@ sub _build_type {
     return "MasterCard" if $self->_search([54,55]);
   }
   return "Maestro"
-    if $self->_search([qw/5020 5038 6304 6759 6761 4903 4905 4911 4936 564182 633110 6333/]);
+    if $self->_search([qw/5020 5038 6304 6759 6761 4903 4905 4911 4936 564182 633110 6333 5033 5868/]);
   return "Solo" if $self->_search([qw/6334 6767/]);
   return "AMEX" if $self->_search([qw/34 37/]);;
   return "Diners Club" if $self->_search([300 .. 305,2014,2149,46,55]);
