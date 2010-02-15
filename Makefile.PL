@@ -1,11 +1,36 @@
-use inc::Module::Install 0.71;
 
-name     'Business-CardInfo';
-all_from 'lib/Business/CardInfo.pm';
+use strict;
+use warnings;
 
-requires 'Test::More' => 0;
-requires 'Moose' => 0.51;
 
-auto_install;
 
-WriteAll;
+use ExtUtils::MakeMaker 6.11;
+
+
+
+my %WriteMakefileArgs = (
+                       'test' => {
+                                   'TESTS' => 't/*.t'
+                                 },
+                       'NAME' => 'Business::CardInfo',
+                       'DISTNAME' => 'Business-CardInfo',
+                       'AUTHOR' => 'Simon Elliott <cpan@papercreatures.com>',
+                       'ABSTRACT' => 'Get/Validate data from credit & debit cards',
+                       'EXE_FILES' => [],
+                       'VERSION' => '0.03',
+                       'LICENSE' => 'perl',
+                       'PREREQ_PM' => {
+                                        'Test::Role' => '0',
+                                        'ExtUtils::MakeMaker' => '6.11',
+                                        'Moose' => '0'
+                                      }
+                     );
+
+
+delete $WriteMakefileArgs{LICENSE}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+

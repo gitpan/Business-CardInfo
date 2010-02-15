@@ -1,0 +1,19 @@
+{
+   "meta-spec" : {
+      "version" : 1.4,
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
+   },
+   "generated_by" : "Dist::Zilla version 1.100160",
+   "version" : "0.03",
+   "name" : "Business-CardInfo",
+   "author" : [
+      "Simon Elliott <cpan@papercreatures.com>"
+   ],
+   "license" : "perl",
+   "requires" : {
+      "Test::Role" : "0",
+      "ExtUtils::MakeMaker" : "6.11",
+      "Moose" : "0"
+   },
+   "abstract" : "Get/Validate data from credit & debit cards"
+}
