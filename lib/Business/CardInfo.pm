@@ -2,7 +2,7 @@ package Business::CardInfo;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 subtype 'CardNumber'
   => as 'Int'
@@ -60,10 +60,9 @@ sub _build_type {
   return "MasterCard" if $self->_search([51 .. 55]);
   return "Solo" if $self->_search([qw/6334 6767/]);
   return "Maestro"
-    if $self->_search([
-      6759, 500 .. 509,5600 .. 5899, 60 .. 69, 490303, 493698, 493699,
-      633302 .. 633349, 
-    ]);
+    if $self->_search([ 6759, 490303, 493698, 493699, 633302 .. 633349 ]);
+  return "International Maestro"
+    if $self->_search([ 500 .. 509,5600 .. 5899, 60 .. 69 ]);
   return "AMEX" if $self->_search([qw/34 37/]);
   return "Diners Club" if $self->_search([2014,2149,46,55,3600]);
   return "Discover" if $self->_search([622126 .. 622925,6011, 644 .. 649, 65]);
@@ -98,7 +97,7 @@ Business::CardInfo - Get/Validate data from credit & debit cards
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -123,10 +122,12 @@ version 0.03
 Possible return values are:
 
   Visa Electron
+  Visa Debit
   Visa
   MasterCard
   Diners Club
   Maestro
+  International Maestro
   Solo
   AMEX
   Discover
