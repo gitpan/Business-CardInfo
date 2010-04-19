@@ -2,7 +2,7 @@ package Business::CardInfo;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 subtype 'CardNumber'
   => as 'Int'
@@ -49,7 +49,8 @@ sub _build_type {
     446213 .. 446254, 446257 .. 446272,446274 .. 446283, 446286, 446294, 450875, 
     453978, 453979, 454313, 454432 .. 454435, 454742, 456725 .. 456745, 
     465830 .. 465879, 465901 .. 465950,475110 .. 475159, 475710 .. 475759, 
-    476220 .. 476269, 476340 .. 476389
+    476220 .. 476269, 476340 .. 476389, 484409 .. 484410, 484427, 
+    490960 .. 490979, 492181 .. 82, 498824, 499902
   ]);
   return "Visa Electron" if $self->_search([
     417500, 400115, 400837 .. 400839, 412921 .. 412923, 417935, 419740, 
@@ -97,7 +98,7 @@ Business::CardInfo - Get/Validate data from credit & debit cards
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

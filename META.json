@@ -4,7 +4,7 @@
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
    },
    "generated_by" : "Dist::Zilla version 1.100160",
-   "version" : "0.04",
+   "version" : "0.05",
    "name" : "Business-CardInfo",
    "author" : [
       "Simon Elliott <cpan@papercreatures.com>"
