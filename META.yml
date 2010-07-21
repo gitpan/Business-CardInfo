@@ -15,4 +15,4 @@ recommends: {}
 requires:
   Moose: 0
   Test::Role: 0
-version: 0.06
+version: 0.07
