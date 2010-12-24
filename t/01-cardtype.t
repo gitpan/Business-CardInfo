@@ -14,9 +14,6 @@ is($bc->type,'Solo');
 
 $bc->number('5641 8200 0000 0005');
 is($bc->type,'International Maestro');
-
-$bc->number('5868 2416 0825 5333 38');
-is($bc->type,'International Maestro');
 $bc->number('3742 000000 00004');
 is($bc->type,'AMEX');
 $bc->number('3569 9900 0000 0009');
@@ -33,11 +30,3 @@ $bc->number('4508750000005461');
 is($bc->type, 'Visa Debit');
 $bc->number('6767000000005462');
 is($bc->type, 'Solo');
-$bc->number('4001658035486204');
-is($bc->type, 'Visa');
-$bc->number('340000432128428');
-is($bc->type, 'AMEX');
-$bc->number('3528008035486208');
-is($bc->type, 'JCB');
-$bc->number('4921818035486201');
-is($bc->type, 'Visa Debit');
