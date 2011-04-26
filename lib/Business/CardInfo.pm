@@ -1,6 +1,6 @@
 package Business::CardInfo;
 BEGIN {
-  $Business::CardInfo::VERSION = '0.09';
+  $Business::CardInfo::VERSION = '0.10';
 }
 use Moose;
 use Moose::Util::TypeConstraints;
@@ -55,11 +55,11 @@ sub _build_type {
     407704, 407705, 408367, 445190, 456705, 456706, 474503,
     474551, 475183, 499844 .. 499846, 460024, 421682, 441078, 445191, 445192, 
     458046, 480240, 499806, 484412, 484415 .. 484417, 495065, 495067, 
-    495090 .. 495094, 446291, 446292, 408456, 408457, 477106
+    495090 .. 495094, 446291, 446292, 408456, 408457
   ]);
   return "Visa Electron" if $self->_search([
     417500, 400115, 400837 .. 400839, 412921 .. 412923, 417935, 419740, 
-    419741, 419773 .. 419776, 424519, 424962, 424963, 444000,
+    419741, 419773 .. 419775, 424519, 424962, 424963, 444000,
     484428 .. 484455, 491730 .. 491759, 491880, 4917, 4913,
     4508, 4844,  484406 .. 484411, 484413, 484414, 484418 .. 484426]);
   return "MasterCard Debit" if $self->_search([
@@ -68,11 +68,11 @@ sub _build_type {
     557498 .. 557547]);
   return "Visa" if $self->_search([qw/4/]);
   return "MasterCard" if $self->_search([51 .. 55]);
-  return "Solo" if $self->_search([qw/6334 6767/]);
   return "Maestro"
-    if $self->_search([ 6759, 490303, 493698, 493699, 633302 .. 633349 ]);
+    if $self->_search([ 6759, 490303, 493698, 493699, 
+                        633302 .. 633349 ]);
   return "International Maestro"
-    if $self->_search([ 500 .. 509,5600 .. 5899, 60 .. 69 ]);
+    if $self->_search([ 500 .. 509,5600 .. 5899, 60 .. 69, 676770, 676774 ]);
   return "AMEX" if $self->_search([qw/34 37/]);
   return "Diners Club" if $self->_search([2014,2149,46,55,3600]);
   return "Discover" if $self->_search([622126 .. 622925,6011, 644 .. 649, 65]);
@@ -107,7 +107,7 @@ Business::CardInfo - Get/Validate data from credit & debit cards
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -139,7 +139,6 @@ Possible return values are:
   Diners Club
   Maestro
   International Maestro
-  Solo
   AMEX
   Discover
   JCB

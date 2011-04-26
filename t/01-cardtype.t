@@ -9,9 +9,6 @@ $bc->number('5404 0000 0000 0001');
 is($bc->type,'MasterCard');
 $bc->number('4917 3000 0000 0008');
 is($bc->type,'Visa Electron');
-$bc->number('6334 9000 0000 0005');
-is($bc->type,'Solo');
-
 $bc->number('5641 8200 0000 0005');
 is($bc->type,'International Maestro');
 $bc->number('3742 000000 00004');
@@ -28,5 +25,3 @@ $bc->number('5100000000005460');
 is($bc->type, 'MasterCard');
 $bc->number('4508750000005461');
 is($bc->type, 'Visa Debit');
-$bc->number('6767000000005462');
-is($bc->type, 'Solo');
