@@ -4,28 +4,28 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Get/Validate data from credit & debit cards',
-  'AUTHOR' => 'Simon Elliott <cpan@papercreatures.com>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "ABSTRACT" => "Get/Validate data from credit & debit cards",
+  "AUTHOR" => "Simon Elliott <cpan\@papercreatures.com>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Business-CardInfo',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Business::CardInfo',
-  'PREREQ_PM' => {
-    'Moose' => '0',
-    'Test::Role' => '0'
+  "DISTNAME" => "Business-CardInfo",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Business::CardInfo",
+  "PREREQ_PM" => {
+    "Moose" => 0,
+    "Test::Role" => 0
   },
-  'VERSION' => '0.10',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.11",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
