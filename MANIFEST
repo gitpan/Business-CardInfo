@@ -5,6 +5,7 @@ META.json
 META.yml
 Makefile.PL
 README
+bin_rules.pdf
 dist.ini
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
